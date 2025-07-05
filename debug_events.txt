@@ -1,0 +1,26 @@
+SQL: SELECT e.*, c.name as category_name
+               FROM events e 
+               JOIN event_categories c ON e.category_id = c.id 
+               WHERE (e.event_date > CURDATE() OR (e.event_date = CURDATE() AND e.event_time > ?)) 
+               ORDER BY e.is_featured DESC, e.event_date ASC, e.event_time ASC 
+               LIMIT ?, ?
+Params: Array
+(
+    [0] => 21:56:52
+)
+
+Results count: 1
+
+SQL: SELECT e.*, c.name as category_name
+               FROM events e 
+               JOIN event_categories c ON e.category_id = c.id 
+               WHERE (e.event_date > CURDATE() OR (e.event_date = CURDATE() AND e.event_time > ?)) 
+               ORDER BY e.is_featured DESC, e.event_date ASC, e.event_time ASC 
+               LIMIT ?, ?
+Params: Array
+(
+    [0] => 21:56:59
+)
+
+Results count: 0
+

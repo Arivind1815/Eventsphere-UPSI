@@ -1,0 +1,270 @@
+/* 
+ * EventSphere@UPSI: Navigate, Engage & Excel
+ * Futuristic and Simple CSS Design
+ */
+
+/* Global Styles */
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --accent-color: #ff006e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #38b000;
+    --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    background-image: radial-gradient(circle at top right, rgba(58, 134, 255, 0.1), transparent), 
+                      radial-gradient(circle at bottom left, rgba(131, 56, 236, 0.1), transparent);
+    background-attachment: fixed;
+    color: var(--dark-color);
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: var(--gradient);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Logo Styling */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.logo h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.logo span {
+    color: var(--primary-color);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.logo p {
+    font-size: 14px;
+    color: var(--dark-color);
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--dark-color);
+    letter-spacing: 0.3px;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 10px 15px;
+    font-size: 15px;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+.form-control.is-invalid {
+    border-color: var(--accent-color);
+}
+
+.invalid-feedback {
+    font-size: 12px;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* Button Styling */
+.btn-register {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: var(--gradient);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-register:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(58, 134, 255, 0.4);
+}
+
+.btn-register:hover:before {
+    left: 100%;
+}
+
+.btn-register:active {
+    transform: translateY(0);
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition);
+}
+
+.login-link a:hover {
+    color: var(--secondary-color);
+}
+
+.login-link a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--gradient);
+    transition: var(--transition);
+}
+
+.login-link a:hover:after {
+    width: 100%;
+}
+
+/* Success Message */
+.success-message {
+    padding: 15px;
+    background-color: rgba(56, 176, 0, 0.1);
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.success-message a {
+    color: var(--success-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Animated Placeholder for inputs */
+.form-control::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.form-control:focus::placeholder {
+    opacity: 0.7;
+    transform: translateX(10px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+    
+    .logo h1 {
+        font-size: 28px;
+    }
+}
+
+/* Subtle Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo {
+    animation: float 6s ease-in-out infinite;
+}

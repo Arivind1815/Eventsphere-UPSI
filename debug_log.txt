@@ -1,0 +1,20 @@
+Current Date/Time: 2025-05-17 21:56:52
+SQL Query: SELECT COUNT(*) as total FROM events e 
+              JOIN event_categories c ON e.category_id = c.id 
+              WHERE (e.event_date > CURDATE() OR (e.event_date = CURDATE() AND e.event_time > ?))
+Parameters: Array
+(
+    [0] => 21:56:52
+)
+
+Parameter Types: s
+Current Date/Time: 2025-05-17 21:56:59
+SQL Query: SELECT COUNT(*) as total FROM events e 
+              JOIN event_categories c ON e.category_id = c.id 
+              WHERE (e.event_date > CURDATE() OR (e.event_date = CURDATE() AND e.event_time > ?))
+Parameters: Array
+(
+    [0] => 21:56:59
+)
+
+Parameter Types: s
